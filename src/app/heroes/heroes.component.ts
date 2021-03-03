@@ -9,8 +9,14 @@ import { MessageService } from '../message.service';
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesComponent implements OnInit 
+{
+  constructor(private heroService: HeroService, private messageService: MessageService) { }
 
+  ngOnInit(): void 
+  {
+    this.getHeroes();  
+  }
   selectedHero?: Hero;
   onSelect(hero: Hero): void 
   {
@@ -26,12 +32,7 @@ export class HeroesComponent implements OnInit {
       .subscribe(heroes => this.heroes = heroes);
   }
 
-  constructor(private heroService: HeroService, private messageService: MessageService) { }
 
-  ngOnInit(): void 
-  {
-    this.getHeroes();  
-  }
   
 
 }
