@@ -18,7 +18,7 @@ export class HeroService
                
             ) { }
 
-  private heroesUrl = 'api/heroes';  // URL to web api
+  private heroesUrl = 'localhost:3000/heroes';  // URL to web api
 
   getHeroes(): Observable<Hero[]> 
   {
